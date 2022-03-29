@@ -48,35 +48,3 @@ status_str = await bot.db.execute(
 )
 status_str == "INSERT 0 1" # True
 ```
-
-## Schema
-Tables can be altered accordingly. 
-> To find Server, Channel, User ID in Discord, first go to User Settings > Advanced and enable Developer Mode. Then, simply right-click on Server, Channel or User and press 'Copy ID'. 
-
-<br>
-
-- ### guildData
-|Attribute|Data Type|Description|
-|:--:|:--:|:--:|
-|guild_id|BIGINT|guild id|
-|user_id|BIGINT|user's id|
-|lvl|INT|user's level|
-|exp|INT|current experience of the user|
-|cumulative_exp|INT|cumulative xp of the user|
-|recent_msg|TEXT|timestamp of user's most recent message<br>(01.03 15:13 = 0103 1513)|
-
-<br>
-
-- ### channel
-|Attribute|Data Type|Description|
-|:--:|:--:|:--:|
-|channel_id|BIGINT|channel id|
-|enable|INT|0 or 1<br>0 for channels that user can't earn xp<br>1 for channels that user can earn xp
-
-
-# Features
-### 1. Custom Command Prefix
-Replace COMMAND_PREFIX with your choice. 
-```Python
-bot = commands.Bot(command_prefix='COMMAND_PREFIX', intents=intents)
-```
